@@ -1,0 +1,7 @@
+.popup {
+    display: none;
+}
+
+.popup.is-open {
+    display: block;
+}
