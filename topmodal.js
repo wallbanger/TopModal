@@ -21,7 +21,7 @@
 
       hide: function(self) {
           // if(!self.hasClass('is-open')) {
-          self.toggleClass('is-open');
+          self.removeClass('is-open');
           // }
       }
   };
