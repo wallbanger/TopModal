@@ -6,33 +6,45 @@
           var self = $(this);
     
           $(document).on('click', methods.options.popupBtn, function() {
-              console.log(methods.options.popupBtnClose);
               methods.show(self);
+              methods.showOverlay(self);
           });
     
           $(document).on('click', methods.options.popupBtnClose, function() {
-              self.toggleClass('is-open');
+              methods.hide(self);
+              methods.hideOverlay(self);
+          });
+
+          $(document).on('click', methods.options.popupOverlay, function() {
+              methods.hide(self);
+              methods.hideOverlay(self);
           });
       },
 
       show: function(self) {
-          self.toggleClass('is-open');
+          self.addClass('is-open');
       },
 
       hide: function(self) {
-          // if(!self.hasClass('is-open')) {
           self.removeClass('is-open');
-          // }
+      },
+      
+      showOverlay: function(self) {
+          self.siblings(methods.options.popupOverlay).addClass('is-open');
+      },
+
+      hideOverlay: function(self) {
+          self.siblings(methods.options.popupOverlay).removeClass('is-open');
       }
   };
 
-  $.fn.popupsic = function(method) {
+  $.fn.topmodal = function(method) {
 
       methods.options = $.extend({
-          popup: '.js-popup',
-          popupBtn: '.js-popup-btn',
-          popupBtnClose: '.js-popup-btn-close',
-          popupOverlay: '.js-popup-overlay'
+          popup: '.js-topmodal',
+          popupBtn: '.js-topmodal-btn',
+          popupBtnClose: '.js-topmodal-btn-close',
+          popupOverlay: '.js-topmodal-overlay'
       }, method);
 
       if (methods[method]) {
@@ -40,7 +52,7 @@
       } else if (typeof method === 'object' || !method) {
           return methods.init.apply(this, arguments);
       } else {
-          $.error('has no such method: ' + method);
+          $.error('TopModal has no such method: ' + method);
       }
 
       return this;
@@ -50,12 +62,12 @@
 
 
 
-$('.js-popup--log').popupsic({
-    popupBtn: '.js-popup-btn--log'
+$('.js-topmodal--log').topmodal({
+    popupBtn: '.js-topmodal-btn--log'
 });
 
-$('.js-popup--reg').popupsic({
-    popupBtn: '.js-popup-btn--reg'
+$('.js-topmodal--reg').topmodal({
+    popupBtn: '.js-topmodal-btn--reg'
 });
 
-$('.js-popup').popupsic();
+$('.js-topmodal').topmodal();

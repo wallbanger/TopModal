@@ -1,7 +1,35 @@
-.popup {
-    display: none;
+html,
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
-.popup.is-open {
+.topmodal {
+    background: #fff;
+    display: none;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    max-width: 500px;
+    z-index: 10000;
+}
+
+.topmodal.is-open {
     display: block;
+}
+
+.topmodal-overlay {
+    background: rgba(35, 29, 82, 0.9);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.topmodal-overlay.is-open {
+    display: block;
+    z-index: 9999;
 }
