@@ -13,7 +13,7 @@
 }
 
 .topmodal-overlay {
-    background: rgba(35, 29, 82, 0.9);
+    background: rgba(200, 200, 200, 0.9);
     display: none;
     position: fixed;
     top: 0;
