@@ -11,7 +11,7 @@ body {
 
 p {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 button {
@@ -28,9 +28,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Page */
 
 .page {
-    padding: 20px;
+    padding: 50px 20px;
     margin: auto;
-    max-width: 500px;
+}
+
+.page__logo {
+    margin-bottom: 25px;
+    width: 55px;
 }
 
 .page__content {
@@ -40,6 +44,10 @@ h1, h2, h3, h4, h5, h6 {
 .page__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
+}
+
+.page__title--colored {
+    color: #777;
 }
 
 /* Buttons */
@@ -66,4 +74,5 @@ h1, h2, h3, h4, h5, h6 {
 
 .topmodal {
     border-radius: 2px;
+    text-align: center;
 }
