@@ -5,13 +5,17 @@ It is easy to use, easy to customize and easy to improve
 
 ## Demo
 
-[Demo:](https://wallbanger.github.io/TopModal/)
+Look at the [Demo](https://wallbanger.github.io/TopModal/)
 
 ## Init
 
-You can call a method on page:
+You can call a plugin on page:
 ```js
-$('.modal-class').topmodal({
-    popupBtn: '.modal-button-class'
+$('element').topmodal();
+
+// with options
+
+$('element').topmodal({
+    popupBtn: 'custom-button-element'
 });
 ```
