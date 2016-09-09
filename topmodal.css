@@ -1,18 +1,17 @@
 .topmodal {
     background: #fff;
+    box-sizing: border-box;
     display: none;
-    margin: auto;
+    position: relative;
     padding: 20px;
-    position: absolute;
-    top: 100px;
-    left: 10px;
-    right: 10px;
     max-width: 500px;
+    width: 100%;
+    vertical-align: middle;
     z-index: 10000;
 }
 
 .topmodal.is-open {
-    display: block;
+    display: inline-block;
 }
 
 .topmodal-overlay {
@@ -29,4 +28,30 @@
 .topmodal-overlay.is-open {
     display: block;
     z-index: 9999;
+}
+
+.topmodal-container {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    display: none;
+    text-align: center;
+    overflow: auto;
+    padding: 10px 10px 0;
+}
+
+.topmodal-container.is-open {
+    display: block;
+}
+
+.topmodal-container:after {
+    content: '';
+    display: inline-block;
+    margin-left: -.05em;
+    height: 100%;
+    vertical-align: middle;
 }
