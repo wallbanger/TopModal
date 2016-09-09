@@ -4,15 +4,22 @@
 
       init: function() {
           var self = $(this);
-    
+
           $(document).on('click', methods.options.popupBtn, function(event) {
               methods.show(self);
               methods.showOverlay(self);
               methods.showContainer(self);
               event.preventDefault();
           });
-    
+
           $(document).on('click', methods.options.popupBtnClose, function(event) {
+              methods.hide(self);
+              methods.hideOverlay(self);
+              methods.hideContainer(self);
+              event.preventDefault();
+          });
+
+          $(document).on('click', methods.options.popupContainer, function(event) {
               methods.hide(self);
               methods.hideOverlay(self);
               methods.hideContainer(self);
@@ -23,12 +30,10 @@
               event.stopPropagation();
           });
 
-          $(document).on('click', methods.options.popupContainer, function(event) {
-              methods.hide(self);
-              methods.hideOverlay(self);
-              methods.hideContainer(self);
-              event.preventDefault();
-          });
+          // return this.click(function(){
+          //     $(this).css();
+          // });
+
       },
 
       show: function(self) {
@@ -81,10 +86,13 @@
 
 
 $('.js-topmodal--log').topmodal({
-    popupBtn: '.js-topmodal-btn--log'
+    popup: '.js-topmodal--log',
+    popupBtn: '.js-topmodal-btn--log',
+    popupBtnClose: '.js-topmodal-btn-closesss'
 });
 
 $('.js-topmodal--reg').topmodal({
+    popup: '.js-topmodal--reg',
     popupBtn: '.js-topmodal-btn--reg'
 });
 
