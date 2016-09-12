@@ -29,11 +29,6 @@
           $(document).on('click', methods.options.popup, function(event) {
               event.stopPropagation();
           });
-
-          // return this.click(function(){
-          //     $(this).css();
-          // });
-
       },
 
       show: function(self) {
