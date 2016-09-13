@@ -9,6 +9,11 @@ body {
     color: #333;
 }
 
+a {
+    padding: 10px;
+    color: #666;
+}
+
 p {
     margin: 0;
     margin-bottom: 25px;
@@ -35,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 .page__logo {
     margin-bottom: 25px;
     width: 55px;
+}
+
+.page__wrapper {
+    padding: 30px;
 }
 
 .page__content {
