@@ -5,28 +5,28 @@
       init: function() {
           var self = $(this);
 
-          $(document).on('click', methods.options.popupBtn, function(event) {
+          $(document).on('click', methods.options.topmodalBtn, function(event) {
               methods.show(self);
               methods.showOverlay(self);
               methods.showContainer(self);
               event.preventDefault();
           });
 
-          $(document).on('click', methods.options.popupBtnClose, function(event) {
+          $(document).on('click', methods.options.topmodalBtnClose, function(event) {
               methods.hide(self);
               methods.hideOverlay(self);
               methods.hideContainer(self);
               event.preventDefault();
           });
 
-          $(document).on('click', methods.options.popupContainer, function(event) {
+          $(document).on('click', methods.options.topmodalContainer, function(event) {
               methods.hide(self);
               methods.hideOverlay(self);
               methods.hideContainer(self);
               event.preventDefault();
           });
 
-          $(document).on('click', methods.options.popup, function(event) {
+          $(document).on('click', methods.options.topmodal, function(event) {
               event.stopPropagation();
           });
       },
@@ -40,11 +40,11 @@
       },
       
       showOverlay: function(self) {
-          self.parent().siblings(methods.options.popupOverlay).addClass('is-open');
+          self.parent().siblings(methods.options.topmodalOverlay).addClass('is-open');
       },
 
       hideOverlay: function(self) {
-          self.parent().siblings(methods.options.popupOverlay).removeClass('is-open');
+          self.parent().siblings(methods.options.topmodalOverlay).removeClass('is-open');
       },
 
       showContainer: function(self) {
@@ -59,11 +59,11 @@
   $.fn.topmodal = function(method) {
 
       methods.options = $.extend({
-          popup: '.js-topmodal',
-          popupBtn: '.js-topmodal-btn',
-          popupBtnClose: '.js-topmodal-btn-close',
-          popupContainer: '.js-topmodal-container',
-          popupOverlay: '.js-topmodal-overlay'
+          topmodal: '.js-topmodal',
+          topmodalBtn: '.js-topmodal-btn',
+          topmodalBtnClose: '.js-topmodal-btn-close',
+          topmodalContainer: '.js-topmodal-container',
+          topmodalOverlay: '.js-topmodal-overlay'
       }, method);
 
       if (methods[method]) {
@@ -81,14 +81,14 @@
 
 
 $('.js-topmodal--log').topmodal({
-    popup: '.js-topmodal--log',
-    popupBtn: '.js-topmodal-btn--log',
-    popupBtnClose: '.js-topmodal-btn-closesss'
+    topmodal: '.js-topmodal--log',
+    topmodalBtn: '.js-topmodal-btn--log',
+    topmodalBtnClose: '.js-topmodal-btn-closesss'
 });
 
 $('.js-topmodal--reg').topmodal({
-    popup: '.js-topmodal--reg',
-    popupBtn: '.js-topmodal-btn--reg'
+    topmodal: '.js-topmodal--reg',
+    topmodalBtn: '.js-topmodal-btn--reg'
 });
 
 $('.js-topmodal').topmodal();
