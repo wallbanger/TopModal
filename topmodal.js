@@ -4,11 +4,11 @@
 
     var pluginName = 'topmodal',
         defaults = {
-            topmodal: '.js-topmodal',
-            topmodalBtn: '.js-topmodal-btn',
-            topmodalBtnClose: '.js-topmodal-btn-close',
-            topmodalContainer: '.js-topmodal-container',
-            topmodalOverlay: '.js-topmodal-overlay'
+            topmodal:             '.js-topmodal',
+            topmodalBtn:          '.js-topmodal-btn',
+            topmodalBtnClose:     '.js-topmodal-btn-close',
+            topmodalContainer:    '.js-topmodal-container',
+            topmodalOverlay:      '.js-topmodal-overlay'
         };
 
     function Plugin ( element, options ) {
@@ -87,15 +87,18 @@
 } )( jQuery, window, document );
 
 
+// Init
+// ToDo: Replace this shit
+
 $('.js-topmodal--log').topmodal({
-    topmodal: '.js-topmodal--log',
-    topmodalBtn: '.js-topmodal-btn--log',
+    topmodal:         '.js-topmodal--log',
+    topmodalBtn:      '.js-topmodal-btn--log',
     topmodalBtnClose: '.js-topmodal-btn-closesss'
 });
 
 $('.js-topmodal--reg').topmodal({
-    topmodal: '.js-topmodal--reg',
-    topmodalBtn: '.js-topmodal-btn--reg'
+    topmodal:          '.js-topmodal--reg',
+    topmodalBtn:       '.js-topmodal-btn--reg'
 });
 
 $('.js-topmodal').topmodal();
