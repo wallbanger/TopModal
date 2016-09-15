@@ -1,8 +1,8 @@
 ;( function( $, window, document, undefined ) {
 
-    "use strict";
+    'use strict';
 
-    var pluginName = "topmodal",
+    var pluginName = 'topmodal',
         defaults = {
             topmodal: '.js-topmodal',
             topmodalBtn: '.js-topmodal-btn',
@@ -22,53 +22,53 @@
     $.extend( Plugin.prototype, {
         init: function() {
             var _obj = this.settings;
-            Plugin.prototype.handleOptions(_obj);
+            Plugin.prototype.handleOptions( _obj );
         },
 
-        show: function (_obj) {
-            $(_obj.topmodal).addClass('is-open');
+        show: function( _obj ) {
+            $( _obj.topmodal ).addClass( 'is-open' );
         },
 
-        hide: function (_obj) {
-            $(_obj.topmodal).removeClass('is-open');
+        hide: function( _obj ) {
+            $( _obj.topmodal ).removeClass( 'is-open' );
         },
 
-        showContainer: function (_obj) {
-            $(_obj.topmodalContainer).addClass('is-open');
+        showContainer: function( _obj ) {
+            $( _obj.topmodalContainer ).addClass( 'is-open' );
         },
 
-        hideContainer: function (_obj) {
-            $(_obj.topmodalContainer).removeClass('is-open');
+        hideContainer: function( _obj ) {
+            $( _obj.topmodalContainer ).removeClass( 'is-open' );
         },
 
-        showOverlay: function (_obj) {
-            $(_obj.topmodalOverlay).addClass('is-open');
+        showOverlay: function( _obj ) {
+            $( _obj.topmodalOverlay ).addClass( 'is-open' );
         },
 
-        hideOverlay: function (_obj) {
-            $(_obj.topmodalOverlay).removeClass('is-open');
+        hideOverlay: function( _obj ) {
+            $( _obj.topmodalOverlay ).removeClass( 'is-open' );
         },
 
-        handleOptions: function (_obj) {
-            $(document).on('click', _obj.topmodalBtn, function() {
-                Plugin.prototype.show(_obj);
-                Plugin.prototype.showContainer(_obj);
-                Plugin.prototype.showOverlay(_obj);
+        handleOptions: function( _obj ) {
+            $( document ).on( 'click', _obj.topmodalBtn, function() {
+                Plugin.prototype.show( _obj );
+                Plugin.prototype.showContainer( _obj );
+                Plugin.prototype.showOverlay( _obj );
             });
 
-            $(document).on('click', _obj.topmodalBtnClose, function() {
-                Plugin.prototype.hide(_obj);
-                Plugin.prototype.hideContainer(_obj);
-                Plugin.prototype.hideOverlay(_obj);
+            $( document ).on( 'click', _obj.topmodalBtnClose, function() {
+                Plugin.prototype.hide( _obj );
+                Plugin.prototype.hideContainer( _obj );
+                Plugin.prototype.hideOverlay( _obj );
             });
 
-            $(document).on('click', _obj.topmodalContainer, function() {
-                Plugin.prototype.hide(_obj);
-                Plugin.prototype.hideContainer(_obj);
-                Plugin.prototype.hideOverlay(_obj);
+            $( document ).on( 'click', _obj.topmodalContainer, function() {
+                Plugin.prototype.hide( _obj );
+                Plugin.prototype.hideContainer( _obj );
+                Plugin.prototype.hideOverlay( _obj );
             });
 
-            $(document).on('click', _obj.topmodal, function(event) {
+            $( document ).on( 'click', _obj.topmodal, function( event ) {
                 event.stopPropagation();
             });
         }
