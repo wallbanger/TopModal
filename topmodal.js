@@ -22,7 +22,31 @@
     $.extend( Plugin.prototype, {
         init: function() {
             var _obj = this.settings;
-            Plugin.prototype.handleOptions( _obj );
+            Plugin.prototype.handlerMethods( _obj );
+        },
+
+        handlerMethods: function( _obj ) {
+            $( document ).on( 'click', _obj.topmodalBtn, function() {
+                Plugin.prototype.show( _obj );
+                Plugin.prototype.showContainer( _obj );
+                Plugin.prototype.showOverlay( _obj );
+            });
+
+            $( document ).on( 'click', _obj.topmodalBtnClose, function() {
+                Plugin.prototype.hide( _obj );
+                Plugin.prototype.hideContainer( _obj );
+                Plugin.prototype.hideOverlay( _obj );
+            });
+
+            $( document ).on( 'click', _obj.topmodalContainer, function() {
+                Plugin.prototype.hide( _obj );
+                Plugin.prototype.hideContainer( _obj );
+                Plugin.prototype.hideOverlay( _obj );
+            });
+
+            $( document ).on( 'click', _obj.topmodal, function( event ) {
+                event.stopPropagation();
+            });
         },
 
         show: function( _obj ) {
@@ -47,32 +71,7 @@
 
         hideOverlay: function( _obj ) {
             $( _obj.topmodalOverlay ).removeClass( 'is-open' );
-        },
-
-        handleOptions: function( _obj ) {
-            $( document ).on( 'click', _obj.topmodalBtn, function() {
-                Plugin.prototype.show( _obj );
-                Plugin.prototype.showContainer( _obj );
-                Plugin.prototype.showOverlay( _obj );
-            });
-
-            $( document ).on( 'click', _obj.topmodalBtnClose, function() {
-                Plugin.prototype.hide( _obj );
-                Plugin.prototype.hideContainer( _obj );
-                Plugin.prototype.hideOverlay( _obj );
-            });
-
-            $( document ).on( 'click', _obj.topmodalContainer, function() {
-                Plugin.prototype.hide( _obj );
-                Plugin.prototype.hideContainer( _obj );
-                Plugin.prototype.hideOverlay( _obj );
-            });
-
-            $( document ).on( 'click', _obj.topmodal, function( event ) {
-                event.stopPropagation();
-            });
         }
-
     });
 
     $.fn[ pluginName ] = function( options ) {
