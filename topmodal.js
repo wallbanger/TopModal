@@ -84,20 +84,3 @@
     };
 
 } )( jQuery, window, document );
-
-
-// Init
-// ToDo: Replace this shit
-
-$('.js-topmodal--log').topmodal({
-    topmodal:         '.js-topmodal--log',
-    topmodalBtn:      '.js-topmodal-btn--log',
-    topmodalBtnClose: '.js-topmodal-btn-closesss'
-});
-
-$('.js-topmodal--reg').topmodal({
-    topmodal:          '.js-topmodal--reg',
-    topmodalBtn:       '.js-topmodal-btn--reg'
-});
-
-$('.js-topmodal').topmodal();

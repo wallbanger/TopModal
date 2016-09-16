@@ -54,5 +54,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="topmodal.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('.js-topmodal--log').topmodal({
+                topmodal:         '.js-topmodal--log',
+                topmodalBtn:      '.js-topmodal-btn--log',
+                topmodalBtnClose: '.js-topmodal-btn-closesss'
+            });
+
+            $('.js-topmodal--reg').topmodal({
+                topmodal:          '.js-topmodal--reg',
+                topmodalBtn:       '.js-topmodal-btn--reg'
+            });
+
+            $('.js-topmodal').topmodal();
+        });
+    </script>
+
 </body>
 </html>
